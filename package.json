@@ -1,0 +1,14 @@
+{
+  "name": "football-sweepstake-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio-safe office football sweepstake dashboard reconstruction.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+

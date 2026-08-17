@@ -1,0 +1,87 @@
+{
+  "source": "fictional sample data",
+  "updatedAt": "2026-07-08T19:20:00Z",
+  "matches": [
+    {
+      "id": "sample-001",
+      "utcDate": "2026-07-03T17:00:00Z",
+      "status": "FINISHED",
+      "stage": "GROUP_STAGE",
+      "homeTeam": "Portugal",
+      "awayTeam": "Mexico",
+      "homeScore": 2,
+      "awayScore": 1
+    },
+    {
+      "id": "sample-002",
+      "utcDate": "2026-07-04T14:00:00Z",
+      "status": "FINISHED",
+      "stage": "GROUP_STAGE",
+      "homeTeam": "Japan",
+      "awayTeam": "Canada",
+      "homeScore": 1,
+      "awayScore": 1
+    },
+    {
+      "id": "sample-003",
+      "utcDate": "2026-07-05T20:00:00Z",
+      "status": "FINISHED",
+      "stage": "GROUP_STAGE",
+      "homeTeam": "Brazil",
+      "awayTeam": "Ghana",
+      "homeScore": 3,
+      "awayScore": 0
+    },
+    {
+      "id": "sample-004",
+      "utcDate": "2026-07-06T17:00:00Z",
+      "status": "FINISHED",
+      "stage": "GROUP_STAGE",
+      "homeTeam": "France",
+      "awayTeam": "Australia",
+      "homeScore": 2,
+      "awayScore": 2
+    },
+    {
+      "id": "sample-005",
+      "utcDate": "2026-07-08T19:00:00Z",
+      "status": "IN_PLAY",
+      "stage": "GROUP_STAGE",
+      "homeTeam": "Argentina",
+      "awayTeam": "Morocco",
+      "homeScore": 1,
+      "awayScore": 0
+    },
+    {
+      "id": "sample-006",
+      "utcDate": "2026-07-09T18:00:00Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "homeTeam": "England",
+      "awayTeam": "United States",
+      "homeScore": null,
+      "awayScore": null
+    },
+    {
+      "id": "sample-007",
+      "utcDate": "2026-07-10T15:00:00Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "homeTeam": "Portugal",
+      "awayTeam": "Japan",
+      "homeScore": null,
+      "awayScore": null
+    },
+    {
+      "id": "sample-008",
+      "utcDate": "2026-07-10T20:00:00Z",
+      "status": "SCHEDULED",
+      "stage": "GROUP_STAGE",
+      "homeTeam": "Brazil",
+      "awayTeam": "France",
+      "homeScore": null,
+      "awayScore": null
+    }
+  ]
+}
+

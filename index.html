@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A portfolio-safe office football sweepstake dashboard with standings, fixtures, selections and automated refreshes."
+    />
+    <meta name="theme-color" content="#07150f" />
+    <title>Office Sweep â€” Football Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Office Sweep home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img">
+            <circle cx="24" cy="24" r="21"></circle>
+            <path d="m24 12 7 5-3 8h-8l-3-8 7-5Zm-7 13-7 4 3 8h9m9-12 7 4-3 8h-9M13 17l4-6m18 6-4-6M22 37l2 5 2-5"></path>
+          </svg>
+        </span>
+        <span>
+          <strong>Office Sweep</strong>
+          <small>Football dashboard</small>
+        </span>
+      </a>
+
+      <div class="topbar-actions">
+        <span class="source-pill" id="sourcePill" data-mode="loading">
+          <span class="status-dot"></span>
+          <span id="sourceLabel">Connecting</span>
+        </span>
+        <button class="button button-ghost" id="refreshButton" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"></path></svg>
+          Refresh
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Portfolio-safe reconstruction Â· Fictional data</p>
+          <h1>Every match.<br /><em>Every move.</em></h1>
+          <p class="hero-text">
+            A live-style office sweepstake that turns match results into an automatically ranked participant leaderboard.
+          </p>
+          <div class="hero-meta">
+            <div>
+              <span>Last sync</span>
+              <strong id="lastUpdated">Waiting for data</strong>
+            </div>
+            <label class="toggle-row" for="autoRefresh">
+              <input id="autoRefresh" type="checkbox" checked />
+              <span class="toggle" aria-hidden="true"></span>
+              <span>Auto-refresh</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="hero-score" aria-label="Current leading participant">
+          <span class="hero-score-kicker">Current leader</span>
+          <div class="leader-orbit">
+            <span class="orbit-ring" aria-hidden="true"></span>
+            <span class="rank-medal">1</span>
+          </div>
+          <strong id="heroLeader">â€”</strong>
+          <span id="heroLeaderTeam">Calculating standings</span>
+        </div>
+      </section>
+
+      <section class="metric-grid" aria-label="Sweepstake summary">
+        <article class="metric-card">
+          <span class="metric-icon mint">01</span>
+          <div><strong id="participantCount">0</strong><span>Participants</span></div>
+        </article>
+        <article class="metric-card">
+          <span class="metric-icon lime">02</span>
+          <div><strong id="matchCount">0</strong><span>Matches tracked</span></div>
+        </article>
+        <article class="metric-card">
+          <span class="metric-icon coral">03</span>
+          <div><strong id="liveCount">0</strong><span>Live now</span></div>
+        </article>
+        <article class="metric-card">
+          <span class="metric-icon blue">04</span>
+          <div><strong id="finishedCount">0</strong><span>Completed</span></div>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel leaderboard-panel">
+          <header class="panel-header">
+            <div>
+              <p class="section-kicker">Sweepstake table</p>
+              <h2>Leaderboard</h2>
+            </div>
+            <span class="panel-note">Group-stage scoring</span>
+          </header>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Rank</th>
+                  <th scope="col">Participant</th>
+                  <th scope="col">Team</th>
+                  <th scope="col" title="Played">P</th>
+                  <th scope="col" title="Goal difference">GD</th>
+                  <th scope="col">Points</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboardBody"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <aside class="panel draft-panel">
+          <header class="panel-header">
+            <div>
+              <p class="section-kicker">Local sandbox</p>
+              <h2>Selection desk</h2>
+            </div>
+          </header>
+          <p class="muted">
+            Reassign a fictional participant. Changes stay only in this browser.
+          </p>
+
+          <form id="selectionForm">
+            <label>
+              Participant
+              <select id="participantSelect"></select>
+            </label>
+            <label>
+              Assigned team
+              <select id="teamSelect"></select>
+            </label>
+            <button class="button button-primary" type="submit">Save selection</button>
+            <button class="text-button" id="resetSelections" type="button">Reset fictional selections</button>
+          </form>
+          <p class="form-message" id="formMessage" aria-live="polite"></p>
+        </aside>
+      </section>
+
+      <section class="panel fixtures-panel">
+        <header class="panel-header fixtures-header">
+          <div>
+            <p class="section-kicker">Match centre</p>
+            <h2>Fixtures & results</h2>
+          </div>
+          <div class="fixture-tools">
+            <label class="search-control">
+              <span class="sr-only">Search teams</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+              <input id="teamSearch" type="search" placeholder="Search team" autocomplete="off" />
+            </label>
+            <label>
+              <span class="sr-only">Filter match status</span>
+              <select id="statusFilter">
+                <option value="ALL">All matches</option>
+                <option value="LIVE">Live</option>
+                <option value="FINISHED">Completed</option>
+                <option value="SCHEDULED">Upcoming</option>
+              </select>
+            </label>
+          </div>
+        </header>
+        <div class="fixture-list" id="fixtureList"></div>
+        <p class="empty-state" id="emptyState" hidden>No matches fit that filter.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Fictional sample data Â· No employer or tournament affiliation</p>
+      <p>Designed as a portfolio reconstruction of an office sweepstake workflow.</p>
+    </footer>
+
+    <template id="fixtureTemplate">
+      <article class="fixture-card">
+        <div class="fixture-time">
+          <span class="match-status"></span>
+          <time></time>
+        </div>
+        <div class="fixture-teams">
+          <span class="home-team"></span>
+          <strong class="fixture-score"></strong>
+          <span class="away-team"></span>
+        </div>
+        <span class="stage-label"></span>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
+

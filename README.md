@@ -62,12 +62,13 @@ Ties are ordered by goal difference, goals scored, and then participant name.
 ## Privacy and ownership
 
 - Fictional people and sample scores only
-- No SGS/NTA branding, internal data, or confidential workflow details
+- No employer or client branding, internal data, or confidential workflow details
 - No FIFA logos or protected visual assets
-- Not affiliated with FIFA, SGS, NTA, football-data.org, or any national football association
+- Not affiliated with FIFA, football-data.org, any employer or client, or any national football association
 - The original deployment audit is documented without reproducing any personal or corporate information
 - No open-source licence is granted unless a licence file is added later
 
 ## Project status
 
 Portfolio demonstration. It is suitable for showing front-end development, API integration, state handling, and automation concepts. Shared multi-user editing, authentication, audit history, and an administrative backend would be required for production use.
+

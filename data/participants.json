@@ -2,10 +2,9 @@
   "participants": [
     { "id": "ava", "name": "Ava", "team": "Portugal", "accent": "#e94444" },
     { "id": "ben", "name": "Ben", "team": "Brazil", "accent": "#f5c842" },
-    { "id": "chloe", "name": "ChloÃ©", "team": "France", "accent": "#5596ff" },
+    { "id": "chloe", "name": "Chloé", "team": "France", "accent": "#5596ff" },
     { "id": "daniel", "name": "Daniel", "team": "Argentina", "accent": "#7bc9ff" },
     { "id": "erin", "name": "Erin", "team": "Japan", "accent": "#ff6b84" },
     { "id": "farah", "name": "Farah", "team": "England", "accent": "#f3f5ff" }
   ]
 }
-

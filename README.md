@@ -1,8 +1,8 @@
 # Football World Cup Sweepstake Dashboard
 
-A portfolio-safe reconstruction of an internal office football sweepstake application. It demonstrates participant-to-team assignments, match ingestion, automatically calculated standings, live-status handling, local selection changes, and timed refreshes in a responsive browser interface.
+A portfolio-safe, clean-room reconstruction of an office football sweepstake application. It demonstrates participant-to-team assignments, match ingestion, automatically calculated standings, live-status handling, local selection changes, and timed refreshes in a responsive browser interface.
 
-> This repository is a reconstruction because the original internal source files were not available during the portfolio audit. All participant names and match results included here are fictional. No employer, applicant, customer, or operational data is included.
+> The original public deployment was reviewed but deliberately not copied: it contains identifiable staff assignments, company branding, and work contact information. All people, teams, and match results included here are fictional. No employer, applicant, customer, or operational data is included.
 
 ![Dashboard preview](docs/dashboard-preview.svg)
 
@@ -33,6 +33,12 @@ Run the scoring tests with:
 npm test
 ```
 
+Create the deployment-only site bundle and run the checks with:
+
+```bash
+npm run check
+```
+
 ## Optional live data
 
 The dashboard works without credentials by using `data/sample-matches.json`. For live data on Netlify:
@@ -59,9 +65,9 @@ Ties are ordered by goal difference, goals scored, and then participant name.
 - No SGS/NTA branding, internal data, or confidential workflow details
 - No FIFA logos or protected visual assets
 - Not affiliated with FIFA, SGS, NTA, football-data.org, or any national football association
+- The original deployment audit is documented without reproducing any personal or corporate information
 - No open-source licence is granted unless a licence file is added later
 
 ## Project status
 
 Portfolio demonstration. It is suitable for showing front-end development, API integration, state handling, and automation concepts. Shared multi-user editing, authentication, audit history, and an administrative backend would be required for production use.
-

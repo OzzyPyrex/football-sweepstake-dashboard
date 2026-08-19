@@ -94,7 +94,7 @@ async function syncData() {
     } catch {
       const samplePayload = await getJson(SAMPLE_MATCHES_URL);
       state.matches = samplePayload.matches || [];
-      state.updatedAt = new Date().toISOString();
+      state.updatedAt = samplePayload.updatedAt || null;
       setSource("sample", "Sample data");
     }
 
@@ -130,9 +130,9 @@ function renderMetrics(participants, leaderboard) {
   elements.finishedCount.textContent = finished;
 
   const leader = leaderboard[0];
-  elements.heroLeader.textContent = leader?.name || "â€”";
+  elements.heroLeader.textContent = leader?.name || "—";
   elements.heroLeaderTeam.textContent = leader
-    ? `${leader.team} Â· ${leader.points} ${leader.points === 1 ? "point" : "points"}`
+    ? `${leader.team} · ${leader.points} ${leader.points === 1 ? "point" : "points"}`
     : "Calculating standings";
 }
 
@@ -291,4 +291,3 @@ elements.autoRefresh.addEventListener("change", setAutoRefresh);
 
 setAutoRefresh();
 syncData();
-

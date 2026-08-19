@@ -5,10 +5,11 @@
   "type": "module",
   "description": "Portfolio-safe office football sweepstake dashboard reconstruction.",
   "scripts": {
-    "test": "node --test"
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "check": "npm run test && npm run build"
   },
   "engines": {
     "node": ">=20"
   }
 }
-

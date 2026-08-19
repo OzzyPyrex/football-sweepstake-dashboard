@@ -58,6 +58,5 @@ test("ranks participants by points then goal difference", () => {
 
 test("formats scheduled and scored matches", () => {
   assert.equal(getMatchSummary({ status: "SCHEDULED" }), "vs");
-  assert.equal(getMatchSummary({ status: "FINISHED", homeScore: 3, awayScore: 2 }), "3â€“2");
+  assert.equal(getMatchSummary({ status: "FINISHED", homeScore: 3, awayScore: 2 }), "3–2");
 });
-

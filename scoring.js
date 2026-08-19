@@ -89,6 +89,5 @@ export function buildLeaderboard(participants = [], matches = []) {
 export function getMatchSummary(match) {
   const status = normalizeStatus(match.status);
   if (status === "SCHEDULED") return "vs";
-  return `${Number(match.homeScore) || 0}â€“${Number(match.awayScore) || 0}`;
+  return `${Number(match.homeScore) || 0}–${Number(match.awayScore) || 0}`;
 }
-
